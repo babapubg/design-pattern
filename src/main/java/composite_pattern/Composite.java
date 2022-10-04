@@ -66,7 +66,21 @@ public class Composite {
 //Client
 
 	public static void main(String[] args) {
-
 		
+		Account d1 = new DepositeAccount("D001", 1100);
+		Account d2 = new DepositeAccount("D002", 2200);
+		Account s1 = new SavingsAccount("S001", 1100);
+		
+		CompositeAccount account = new CompositeAccount();
+		account.addAccount(d1);
+		account.addAccount(d2);
+		account.addAccount(s1);
+		
+		float balance = account.getBalance();
+		System.err.println("Total balance : " + balance);
+		
+		account.removeAccount(d2);
+		balance = account.getBalance();
+		System.err.println("Total balance : " + balance);
 	}
 }
